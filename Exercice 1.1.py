@@ -1,7 +1,7 @@
 #importer csv
 import pandas as pd
 
-df = pd.read_csv("netflix_titles.csv")
+df = pd.read_csv("data/netflix_titles.csv")
 
 print(df)
 
@@ -10,11 +10,12 @@ print(df)
 import json as js
 
 # Chemin vers le fichier JSON
-file_path = "covid_19.json"
+file_path = "data/covid_19.json"
 
 # Lecture du fichier JSON
-with open(file_path, "r", encoding="utf-8") as file:
+with open(file_path, "r") as file:
     data = js.load(file)
+    print(type(data))
 
 # Affichage des données importées
 print(data)
@@ -24,7 +25,7 @@ print(data)
 print("-------------------------")
 import xml.etree.ElementTree as ET
 # Chemin vers le fichier XML
-file_path = "clinical_trials.xml"
+file_path = "data/clinical_trials.xml"
 # Lecture et analyse du fichier XML
 tree = ET.parse(file_path)
 root = tree.getroot()
@@ -41,7 +42,7 @@ for child in root:
 print("-------------------------")
 
 # Chemin vers le fichier HTML
-file_pathh = "lsm.html"
+file_pathh = "data/lsm.html"
 from bs4 import BeautifulSoup
 
 # Lecture du fichier HTML
